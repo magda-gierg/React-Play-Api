@@ -13,7 +13,9 @@ export function getLocation(address, cb) {
     // .send({address})
     .end((err, res) => {
       // console.log(res.body);
-      console.log(res.body.results[0].address_components[6].long_name);
-      cb(res.body)
+      console.log(res.body);
+      let arr = res.body.results[0].address_components
+      console.log({arr});
+      cb(arr[arr.length - 1].long_name)
     })
 }
