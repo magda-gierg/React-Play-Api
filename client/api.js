@@ -12,7 +12,8 @@ export function getLocation(address, cb) {
     .set('Accept', 'application/json')
     // .send({address})
     .end((err, res) => {
-      console.log(res);
+      // console.log(res.body);
+      console.log(res.body.results[0].address_components[6].long_name);
       cb(res.body)
     })
 }
